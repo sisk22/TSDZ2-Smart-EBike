@@ -44,7 +44,7 @@ typedef struct
   uint8_t ui8_motor_temperature_max_value_to_limit;
   uint16_t ui16_motor_temperature_x2;
   uint8_t ui8_motor_temperature;
-  uint8_t ui8_ramp_up_amps_per_second_x10;
+  uint8_t ui8_ramp_up_amps_per_second;
   uint8_t ui8_torque_sensor_calibration_pedal_ground;
   uint8_t ui8_torque_sensor_calibration_feature_enabled;
   uint8_t ui8_battery_current_min_adc;

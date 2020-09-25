@@ -703,17 +703,17 @@ static void communications_process_packages(uint8_t ui8_frame_type)
       // motor over temperature max value limit
       m_config_vars.ui8_motor_temperature_max_value_to_limit = ui8_rx_buffer[13];
       // ramp up, amps per second
-      m_config_vars.ui8_ramp_up_amps_per_second_x10 = ui8_rx_buffer[14];
+      m_config_vars.ui8_ramp_up_amps_per_second = ui8_rx_buffer[14];
 
       // check that value seems correct
-      if (m_config_vars.ui8_ramp_up_amps_per_second_x10 < 4 || m_config_vars.ui8_ramp_up_amps_per_second_x10 > 100)
+      if (m_config_vars.ui8_ramp_up_amps_per_second < 4)
       {
        // value is not valid, set to default
-       m_config_vars.ui8_ramp_up_amps_per_second_x10 = DEFAULT_VALUE_RAMP_UP_AMPS_PER_SECOND_X10;
+       m_config_vars.ui8_ramp_up_amps_per_second = DEFAULT_VALUE_RAMP_UP_AMPS_PER_SECOND;
       }
 
       // calculate current step for ramp up
-      ui32_temp = ((uint32_t) 24375) / ((uint32_t) m_config_vars.ui8_ramp_up_amps_per_second_x10); // see note below
+      ui32_temp = ((uint32_t) 2437) / ((uint32_t) m_config_vars.ui8_ramp_up_amps_per_second); // see note below
       ui16_g_current_ramp_up_inverse_step = (uint16_t) ui32_temp;
 
       /*---------------------------------------------------------

@@ -118,7 +118,7 @@
 #define WHEEL_SPEED_SENSOR_MIN_PWM_CYCLE_TICKS                    39976 // could be a bigger number but will make for a slow detection of stopped wheel speed
 
 // default values for ramp up
-#define DEFAULT_VALUE_RAMP_UP_AMPS_PER_SECOND_X10                 50  // 5.0 amps per second ramp up
+#define DEFAULT_VALUE_RAMP_UP_AMPS_PER_SECOND                     5  // 5.0 amps per second ramp up
 
 
 // ADC battery voltage measurement
